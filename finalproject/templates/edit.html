@@ -1,0 +1,41 @@
+<style>
+  body {
+    background-color: #403e37; /* changed to a light gray */
+    color: black;
+    font-family: Arial, sans-serif; /* added a font family */
+    margin: 0; /* removed default margin */
+    padding: 0; /* removed default padding */
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto; /* centered the container */
+    padding: 20px;
+    background-color: white; /* added a white background to the container */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* added a subtle shadow */
+  }
+
+  .button-alternative {
+    background-color: #f44336; /* changed to red */
+    color: Black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button-alternative:hover {
+    background-color: #e53935; /* changed to a darker red */
+  }
+</style>
+
+<div class="container">
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="button-alternative" type="submit" value="Submit">
+  </form>
+</div>
